@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+@font-face {
+  font-family: "iransans";
+  font-weight: 200;
+  src: url("./assets/fonts/IRANSANS_LIGHT.TTF");
+}
+@font-face {
+  font-family: "iransans";
+  font-weight: 400;
+  src: url("./assets/fonts/IRANSANS.TTF");
+}
+@font-face {
+  font-family: "iransans";
+  font-weight: 500;
+  src: url("./assets/fonts/IRANSANS_MEDIUM.TTF");
+}
+
+@font-face {
+  font-family: "iransans";
+  font-weight: 700;
+  src: url("./assets/fonts/IRANSANS_BOLD.TTF");
+}
+* {
+  font-family: "iransans";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+a {
+  text-decoration: none;
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
