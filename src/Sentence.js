@@ -1,7 +1,7 @@
 import Layout from "./Layout";
 
 const Sentence = () => {
-  return <Layout></Layout>;
+  return <Layout header="جمله سازی"></Layout>;
 };
 
 export default Sentence;

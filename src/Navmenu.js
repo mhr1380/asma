@@ -4,6 +4,7 @@ import ear from "./assets/images/ear@2x.png";
 import puzzle from "./assets/images/puzzle (1)@2x.png";
 import test from "./assets/images/test@2x.png";
 import { NavLink } from "react-router-dom";
+import "./Navmenu.css";
 let activeClassName = "active";
 const Navmenu = () => {
   return (
@@ -47,7 +48,7 @@ const Navmenu = () => {
           </NavLink>
         </div>
         <div className="nav-item">
-          <NavLink to="/word">
+          <NavLink to="/words">
             <div className="nav-item-inner">
               <div className="nav-icon-container">
                 <img alt="alphabet-icon" src={capital} />

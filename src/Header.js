@@ -2,7 +2,7 @@ import menu from "./assets/images/menu.png";
 import search from "./assets/images/search.png";
 import heart from "./assets/images/heart.png";
 import home from "./assets/images/home.png";
-const Header = () => {
+const Header = ({ text }) => {
   return (
     <div className="kalameh-header">
       <div className="kalameh-header-icons-container">
@@ -14,6 +14,9 @@ const Header = () => {
         <div>
           <img alt="menu-icon" src={menu} className="menu-icon" />
         </div>
+      </div>
+      <div className="page-text-container">
+        <h2 className="page-text">{text}</h2>
       </div>
     </div>
   );
