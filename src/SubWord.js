@@ -42,6 +42,11 @@ const Words = () => {
                 <div className="kalameh-alphabet-inner-container">
                   <p>الفبا</p>
                 </div>
+              </div>{" "}
+              <div className="kalameh-alphabet-container">
+                <div className="kalameh-alphabet-inner-container">
+                  <p>الفبا</p>
+                </div>
               </div>
             </div>
           </div>

@@ -53,7 +53,7 @@ const Words = () => {
                   />
                 </div>
               </div>
-              <div className="kalameh-alphabet-container">
+              <div className="kalameh-alphabet-container grid-column-start-2">
                 <div className="kalameh-alphabet-inner-container">
                   <p>الفبا</p>
                   <img
@@ -63,7 +63,7 @@ const Words = () => {
                   />
                 </div>
               </div>
-              <div className="kalameh-alphabet-container">
+              <div className="kalameh-alphabet-container grid-column-start-3">
                 <div className="kalameh-alphabet-inner-container">
                   <p>الفبا</p>
                   <img
