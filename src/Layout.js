@@ -4,9 +4,9 @@ import Header from "./Header";
 const Layout = ({ children, header }) => {
   return (
     <React.Fragment>
-      <Header text={header}></Header>
+      <Header text={header} />
       {children}
-      <Navmenu></Navmenu>
+      <Navmenu />
     </React.Fragment>
   );
 };

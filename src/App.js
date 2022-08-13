@@ -15,8 +15,11 @@ function App() {
           path="/words/alphabet/subword/description"
           element={<WordDescription />}
         ></Route>
-        <Route path="/words/alphabet/subword" element={<SubWord />}></Route>
-        <Route path="/words/alphabet" element={<Alphabet />}></Route>
+        <Route
+          path="/words/:category/:wordid"
+          element={<WordDescription />}
+        ></Route>
+        <Route path="/words/:category" element={<Alphabet />}></Route>
         <Route path="/words" element={<Words />}></Route>
         <Route path="/deaf" element={<Deaf />}></Route>
         <Route path="/sentence" element={<Sentence />}></Route>
