@@ -1,5 +1,5 @@
-import Layout from "./Layout";
-import music from "./assets/images/music.png";
+import Layout from "../Layout/Layout";
+import music from "../assets/images/music.png";
 const Deaf = () => {
   return (
     <Layout header="امور ناشنوایان">

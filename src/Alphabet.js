@@ -1,7 +1,7 @@
 import "./Kalameh.css";
 import alphabet from "./assets/images/alphabet.png";
 import React, { useState, useEffect } from "react";
-import Layout from "./Layout";
+import Layout from "./Layout/Layout";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import WordItem from "./WordItem";
 import { http } from "./http";

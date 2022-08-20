@@ -1,10 +1,10 @@
-import "./Kalameh.css";
-import alpha from "./assets/images/alpha.png";
+import "../Kalameh.css";
+import alpha from "../assets/images/alpha.png";
 import React, { useEffect, useState } from "react";
-import Layout from "./Layout";
+import Layout from "../Layout/Layout";
 import { Link } from "react-router-dom";
-import WordItem from "./WordItem";
-import { http } from "./http";
+import WordItem from "../WordItem";
+import { http } from "../http";
 
 const Words = () => {
   const [categories, setCategories] = useState([]);
@@ -21,7 +21,7 @@ const Words = () => {
       <div className="kalameh">
         <Layout header="کلمه">
           <div className="kalameh-body kalameh-category">
-            <div className="kalameh-body-grid">
+            <div className={`kalameh-body-grid`}>
               {categories.map((category, index) => (
                 <WordItem
                   key={index}
