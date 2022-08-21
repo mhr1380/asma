@@ -59,14 +59,7 @@ const TestBegin = () => {
             );
           })}
         </div>
-        <div className="test-begin-score-container">
-          <div className="test-begin-score-item green">
-            <p>{correctsCounter}</p>
-          </div>{" "}
-          <div className="test-begin-score-item red">
-            <p>{incorrectsCounter} </p>
-          </div>{" "}
-        </div>
+
         <div className="test-begin-arrows">
           <div
             onClick={() => {
@@ -90,6 +83,14 @@ const TestBegin = () => {
               </div>
             ))}
         </div>
+      </div>
+      <div className="test-begin-score-container">
+        <div className="test-begin-score-item green">
+          <p>{correctsCounter}</p>
+        </div>{" "}
+        <div className="test-begin-score-item red">
+          <p>{incorrectsCounter} </p>
+        </div>{" "}
       </div>
     </Layout>
   );

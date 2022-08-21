@@ -8,6 +8,7 @@ import Alphabet from "./Alphabet";
 import WordDescription from "./WordDescription";
 import { Navigate } from "react-router-dom";
 import TestBegin from "./pages/TestBegin";
+import Search from "./pages/Search";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
         <Route path="/words/:category" element={<Alphabet />}></Route>
         <Route path="/words" element={<Words />}></Route>
         <Route path="/deaf" element={<Deaf />}></Route>
+        <Route path="/search" element={<Search />}></Route>
         <Route path="/sentence" element={<Sentence />}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/" element={<Navigate to="/words" />}></Route>
