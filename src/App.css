@@ -62,6 +62,11 @@
   font-weight: bold;
   src: url("./assets/fonts/KALAMEH_BOLD.TTF");
 }
+@font-face {
+  font-family: "iranyekan";
+  font-weight: normal;
+  src: url("./assets/fonts/iranyekanwebbold.woff");
+}
 * {
   font-family: "iransans";
   margin: 0;

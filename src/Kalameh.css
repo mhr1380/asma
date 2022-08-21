@@ -299,14 +299,63 @@ body::-webkit-scrollbar {
 .test-begin-arrows {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  padding: 0 30px;
+  width: 229px;
   position: fixed;
   bottom: 90px;
 }
+.test-begin-btn.wrong {
+  background-color: #f63c3c;
+  color: white;
+}
+.test-begin-btn.correct {
+  background-color: #3cf655;
+  color: white;
+}
 .test-begin-arrows img {
-  width: 31px;
+  width: 11.36px;
+  height: 12px;
+}
+.test-begin-img-container img {
+  width: 172px;
+  height: 145px;
+}
+.test-begin-btn {
+  background-color: #fcd4d9;
+  width: 100px;
   height: 31px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
+}
+.test-begin-btn p {
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+}
+.test-begin-score-container {
+  display: flex;
+  column-gap: 8px;
+  margin-top: 16px;
+}
+.test-begin-score-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.test-begin-score-item p {
+  font-size: 17px;
+  font-family: "iranyekan";
+}
+.test-begin-score-item.green {
+  border: 2px solid #3cf655;
+}
+.test-begin-score-item.red {
+  border: 2px solid #f63c3c;
 }
 @media only screen and (min-width: 500px) {
   .test-begin-arrows img {
@@ -395,6 +444,7 @@ body::-webkit-scrollbar {
     min-height: 65vh;
   }
 }
+
 @media only screen and (min-width: 900px) {
   .test-list-container {
     width: 467px;
