@@ -1,10 +1,10 @@
 import React from "react";
 import Navmenu from "../Navmenu";
 import Header from "../Header";
-const Layout = ({ children, header }) => {
+const Layout = ({ children, header, home }) => {
   return (
     <React.Fragment>
-      <Header text={header} />
+      <Header homee={home} text={header} />
       {children}
       <Navmenu />
     </React.Fragment>

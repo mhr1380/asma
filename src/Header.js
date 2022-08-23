@@ -3,12 +3,16 @@ import search from "./assets/images/search.png";
 import heart from "./assets/images/heart.png";
 import home from "./assets/images/home.png";
 import { Link } from "react-router-dom";
-const Header = ({ text }) => {
+const Header = ({ text, homee }) => {
   return (
     <div className="kalameh-header">
       <div className="kalameh-header-icons-container">
         <div className="menu-icon-pack">
-          <img alt="home-icon" src={home} />
+          {!homee && (
+            <Link to="/home">
+              <img alt="home-icon" src={home} />
+            </Link>
+          )}
           <Link to="/search">
             <img alt="search-icon" src={search} />
           </Link>

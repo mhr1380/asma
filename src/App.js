@@ -9,6 +9,9 @@ import WordDescription from "./WordDescription";
 import { Navigate } from "react-router-dom";
 import TestBegin from "./pages/TestBegin";
 import Search from "./pages/Search";
+import SentenceSearch from "./pages/SentenceSearch";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +30,12 @@ function App() {
         <Route path="/words" element={<Words />}></Route>
         <Route path="/deaf" element={<Deaf />}></Route>
         <Route path="/search" element={<Search />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route
+          path="/sentencesearch/:routeId"
+          element={<SentenceSearch />}
+        ></Route>
         <Route path="/sentence" element={<Sentence />}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/" element={<Navigate to="/words" />}></Route>
