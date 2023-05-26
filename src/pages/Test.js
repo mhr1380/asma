@@ -1,9 +1,22 @@
 import Layout from "../Layout/Layout";
 import music from "../assets/images/music.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
+import { useState } from "react";
+import Popup from "../components/popup";
 const Test = () => {
+  const navigator = useNavigate();
+  const { auth, setAuth } = useAuth();
+  const [showPremiumPopup, setShowPremiumPopup] = useState(false);
   return (
     <Layout header="آزمون">
+      {showPremiumPopup && (
+        <Popup
+          show={showPremiumPopup}
+          setShow={setShowPremiumPopup}
+          title="آزمون تصویری"
+        />
+      )}
       <div className="test-body">
         <div className="test-list-container">
           <div className="deaf-list-item-container">
@@ -14,7 +27,16 @@ const Test = () => {
               </div>
             </Link>
           </div>{" "}
-          <div className="deaf-list-item-container">
+          <div
+            className="deaf-list-item-container"
+            onClick={() => {
+              if (auth?.user?.is_professional) {
+                navigator("/test/testbegin?video");
+              } else {
+                setShowPremiumPopup(true);
+              }
+            }}
+          >
             <div className="deaf-list-item test pink">
               <h3>آزمون ویدیویی</h3>
               <img src={music} alt="music-icon" />

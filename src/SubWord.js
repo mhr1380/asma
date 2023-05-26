@@ -14,7 +14,6 @@ const SubWords = () => {
       const { data } = await http.get(
         `/word-api/words/?category__farsi_name=${subword}`
       );
-      console.log(data);
     };
     fetchSubWords();
   }, []);

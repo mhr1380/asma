@@ -40,19 +40,20 @@ const Alphabet = () => {
                 words.length > 0 ? "subword" : ""
               }`}
             >
+              {console.log(subCategories)}
               {category === "الفبا"
                 ? subCategories.map((subCategory, index) => (
                     <WordItem
                       key={index}
                       title={subCategory.farsi_name}
-                      alphabet={alphabet}
+                      alphabet={subCategory.icon}
                     />
                   ))
                 : subCategories.map((subCategory, index) => (
                     <WordItem
                       key={index}
                       title={subCategory.farsi_name}
-                      icon={alphabet}
+                      icon={subCategory.icon}
                     />
                   ))}
               {words.length > 0 &&

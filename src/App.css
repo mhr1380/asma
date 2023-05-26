@@ -67,6 +67,9 @@
   font-weight: normal;
   src: url("./assets/fonts/iranyekanwebbold.woff");
 }
+.font-yekan {
+  font-family: "iranyekan";
+}
 * {
   font-family: "iransans";
   margin: 0;

@@ -2,12 +2,13 @@ import "../Kalameh.css";
 import alpha from "../assets/images/alpha.png";
 import React, { useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
-import { Link } from "react-router-dom";
 import WordItem from "../WordItem";
 import { http } from "../http";
-
+import Cookie from "universal-cookie";
 const Words = () => {
   const [categories, setCategories] = useState([]);
+  const cookie = new Cookie();
+
   useEffect(() => {
     const fetchCategories = async () => {
       const { data } = await http.get("/word-api/word-categories/");
@@ -22,11 +23,12 @@ const Words = () => {
         <Layout header="کلمه">
           <div className="kalameh-body kalameh-category">
             <div className={`kalameh-body-grid`}>
+              {console.log(categories)}
               {categories.map((category, index) => (
                 <WordItem
                   key={index}
                   title={category.farsi_name}
-                  icon={alpha}
+                  icon={category.icon}
                 />
               ))}
             </div>

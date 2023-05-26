@@ -38,7 +38,7 @@ const Navmenu = () => {
           </NavLink>
         </div>
         <div className="nav-item">
-          <NavLink to="/deaf">
+          <NavLink to="/affair">
             <div className="nav-item-inner">
               <div className="nav-icon-container">
                 <img alt="ear-icon" src={ear} />

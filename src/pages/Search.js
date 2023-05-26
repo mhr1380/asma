@@ -13,10 +13,9 @@ const Search = () => {
       return;
     }
     const { data } = await http.get(
-      `/word-api/words/?search=${e.target.value}`
+      `kernel-api/search/?search=${e.target.value}`
     );
-    const { results } = data;
-    setWords(results);
+    setWords(data);
   };
   return (
     <Layout header="جستجو">
@@ -39,17 +38,37 @@ const Search = () => {
           }`}
         >
           {!words && <p> کلمه ی مورد نظر خود را جستجو کنید</p>}
-          {words &&
-            words.map((word) => (
-              <div
-                onClick={() => {
-                  navigate("/words/search/" + word.id);
-                }}
-                className="search-words-item"
-              >
-                {word.farsi_name}
-              </div>
-            ))}
+          {words?.words &&
+            words.words.map((word) => {
+              return (
+                <div
+                  key={word.id}
+                  onClick={() => {
+                    navigate("/words/search/" + word.id);
+                  }}
+                  className="search-words-item"
+                >
+                  {word.farsi_name} - کلمه
+                </div>
+              );
+            })}
+          {words?.affairs &&
+            words.affairs.map((word) => {
+              return (
+                <div
+                  key={word.id}
+                  onClick={() => {
+                    navigate("/affair/search/" + word.id);
+                  }}
+                  className="search-words-item"
+                >
+                  {word.farsi_description.length > 20
+                    ? word.farsi_description.slice(0, 17) + "..."
+                    : word.farsi_description}{" "}
+                  - امور ناشنوایان
+                </div>
+              );
+            })}
           {words && words.length === 0 && (
             <div className="not-found-container">
               <p>لغت مورد نظر پیدا نشد</p>

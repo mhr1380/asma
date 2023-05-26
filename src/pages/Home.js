@@ -1,6 +1,7 @@
 import Layout from "../Layout/Layout";
 import music from "../assets/images/music.png";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 
 const Home = () => {
   return (
@@ -20,7 +21,7 @@ const Home = () => {
             </div>
           </Link>
 
-          <Link to="/deaf">
+          <Link to="/affair">
             {" "}
             <div className="deaf-list-item-container">
               <div

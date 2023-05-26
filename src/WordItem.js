@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-const WordItem = ({ title, icon, alphabet }) => {
+const WordItem = ({ title, icon, alphabet, url = "words" }) => {
   if (alphabet) {
     return (
       <div className="kalameh-alphabet-container">
         <div className="kalameh-alphabet-inner-container">
-          <Link to={`/words/${title}`}>
+          <Link to={`/${url}/${title}`}>
             <img alt="alphabet-icon" src={alphabet} />
           </Link>
         </div>
@@ -12,7 +12,7 @@ const WordItem = ({ title, icon, alphabet }) => {
     );
   }
   return (
-    <Link to={`/words/${title}`}>
+    <Link to={`/${url}/${title}`}>
       <div className="kalameh-alphabet-container">
         <div className="kalameh-alphabet-inner-container">
           {" "}

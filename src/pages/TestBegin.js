@@ -3,7 +3,17 @@ import next from "../assets/images/next.png";
 import prev from "../assets/images/prev.png";
 import doubleright from "../assets/images/left-arrow.svg";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import Cookie from "universal-cookie";
+
 import { http } from "../http";
+import { getMe } from "../http/get-me";
+import { toast } from "react-toastify";
+import { useContext } from "react";
+
+import Popup from "../components/popup";
+import ReactPlayer from "react-player";
+import { useAuth } from "../context/AuthProvider";
 const TestBegin = () => {
   const [options, setOptions] = useState([]);
   const [correctAnswer, setCorrectAnswer] = useState(0);
@@ -12,33 +22,67 @@ const TestBegin = () => {
   const [correctsCounter, setCorrectsCounter] = useState(0);
   const [incorrectsCounter, setIncorrectsCounter] = useState(0);
   const [handleNext, setHandleNext] = useState(0);
+  const location = useLocation();
+  const [showPopup, setShowPopup] = useState(false);
+  const navigator = useNavigate();
+  const { auth, setAuth } = useAuth();
+  console.log(auth);
   useEffect(() => {
     const fetchTest = async () => {
-      const { data } = await http.get("/exam-api/exams/");
-      const exam = data.results[0];
-      const { options } = exam;
-      setOptions(options);
-      let x = Math.floor(Math.random() * 4);
-      const correct = options[x];
-      setCorrectAnswer(correct);
+      if (auth.accessToken) {
+        let { data } = await http.get("/word-api/exams/", {
+          headers: { Authorization: `Bearer ${auth.accessToken}` },
+        });
+        console.log(data);
+        const options = data.results;
+        setOptions(options);
+        let x = Math.floor(Math.random() * 4);
+        const correct = options[x];
+        setCorrectAnswer(correct);
+      } else {
+        navigator("/login");
+      }
     };
     fetchTest();
-  }, [handleNext]);
+  }, [auth, handleNext]);
 
+  console.log(correctAnswer);
   return (
     <Layout header="آزمون">
+      {console.log(correctAnswer)}
+      {showPopup && <Popup />}
       <div className="test-begin-body">
         <div className="test-begin-img-container">
-          <img src={correctAnswer && correctAnswer.word.image} />
+          {location.search === "?video" ? (
+            <ReactPlayer
+              config={{
+                file: {
+                  attributes: {
+                    controlsList: "nodownload noplaybackrate nofullscreen",
+                  },
+                },
+              }}
+              // Disable right click
+              onContextMenu={(e) => e.preventDefault()}
+              width={"100%"}
+              height={"100%"}
+              url={correctAnswer?.video_link?.video1}
+              loop={true}
+              controls={true}
+              pip={false}
+            />
+          ) : (
+            <img src={correctAnswer && correctAnswer?.image} />
+          )}
         </div>
         <div className="test-begin-options-container">
           {options.map((option) => {
             return (
               <div
-                key={option.id}
+                key={option?.id}
                 onClick={(e) => {
                   if (!showAnswer) {
-                    if (option.id === correctAnswer.id) {
+                    if (option?.id === correctAnswer.id) {
                       e.target.className = "test-begin-option correct";
                       setShowAnswer(true);
                       setIsCorrect(true);
@@ -51,10 +95,10 @@ const TestBegin = () => {
                   }
                 }}
                 className={`test-begin-option ${
-                  option.id === correctAnswer.id && showAnswer ? "correct" : ""
+                  option?.id === correctAnswer.id && showAnswer ? "correct" : ""
                 }`}
               >
-                {option.word.farsi_name}
+                {option?.farsi_name}
               </div>
             );
           })}

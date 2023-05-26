@@ -1,5 +1,16 @@
-import { Link } from "react-router-dom";
-const SubWordItem = ({ title, id, image, handleClick, routeId, sentence }) => {
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "./context/AuthProvider";
+const SubWordItem = ({
+  title,
+  id,
+  image,
+  handleClick,
+  routeId,
+  sentence,
+  setShow,
+}) => {
+  const navigate = useNavigate();
+  const { auth } = useAuth();
   if (image) {
     return (
       <div
@@ -18,7 +29,16 @@ const SubWordItem = ({ title, id, image, handleClick, routeId, sentence }) => {
     return (
       <div className="kalameh-alphabet-container">
         <Link to={`/sentencesearch/${routeId}`} state={sentence}>
-          <div className="kalameh-alphabet-inner-container">
+          <div
+            className="kalameh-alphabet-inner-container"
+            onClick={() => {
+              if (auth?.user?.is_professional) {
+                navigate(`/sentencesearch/${routeId}`, { state: sentence });
+              } else {
+                setShow(true);
+              }
+            }}
+          >
             <p>{title}</p>
           </div>
         </Link>

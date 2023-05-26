@@ -3,13 +3,15 @@ import searchblack from "../assets/images/searchblack.png";
 import { useEffect, useState } from "react";
 import { http } from "../http";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { getWord } from "../http/get-single-word";
+import { useAuth } from "../context/AuthProvider";
 const SentenceSearch = () => {
   const [search, setSearch] = useState("");
   const [words, setWords] = useState(null);
   const params = useParams();
   const navigate = useNavigate();
   const { state } = useLocation();
-
+  const { auth, setAuth } = useAuth();
   const handleSearch = async (e) => {
     if (e.target.value === "") {
       setWords(null);
@@ -47,9 +49,9 @@ const SentenceSearch = () => {
               <div
                 onClick={() => {
                   const newSentence = [...state];
+                  newSentence[params.routeId].id = word.id;
                   newSentence[params.routeId].title = word.farsi_name;
-                  newSentence[params.routeId].video = word.video;
-                  navigate("/sentence", { state: state });
+                  navigate("/sentence", { state: newSentence });
                 }}
                 className="search-words-item"
               >
