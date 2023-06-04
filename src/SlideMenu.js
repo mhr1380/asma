@@ -20,33 +20,35 @@ const SlideMenu = ({ showMenu, closeMenu }) => {
             {/* <div className="slide-menu-item">
               <div className="slide-menu-item-inner">علاقه مندی</div>
             </div> */}
-            <div className="slide-menu-item">
-              <div
-                className="slide-menu-item-inner"
-                onClick={async () => {
-                  if (auth.accessToken) {
-                    const { data } = await http.post(
-                      "kernel-api/bankgateway/",
-                      {},
-                      {
-                        headers: {
-                          Authorization: `Bearer ${auth.accessToken}`,
-                        },
-                      }
-                    );
-                    const url = data.slice(
-                      data.indexOf("action") + 8,
-                      data.indexOf("action") + 95
-                    );
-                    window.location.href = url;
-                  } else {
-                    navigate("/login");
-                  }
-                }}
-              >
-                خرید برنامه
+            {!auth?.user?.is_professional && (
+              <div className="slide-menu-item">
+                <div
+                  className="slide-menu-item-inner"
+                  onClick={async () => {
+                    if (auth.accessToken) {
+                      const { data } = await http.post(
+                        "kernel-api/bankgateway/",
+                        {},
+                        {
+                          headers: {
+                            Authorization: `Bearer ${auth.accessToken}`,
+                          },
+                        }
+                      );
+                      const url = data.slice(
+                        data.indexOf("action") + 8,
+                        data.indexOf("action") + 95
+                      );
+                      window.location.href = url;
+                    } else {
+                      navigate("/login");
+                    }
+                  }}
+                >
+                  خرید برنامه
+                </div>
               </div>
-            </div>
+            )}
             <div className="slide-menu-item">
               <div className="slide-menu-item-inner">تماس با ما</div>
             </div>
@@ -55,11 +57,13 @@ const SlideMenu = ({ showMenu, closeMenu }) => {
                 <div className="slide-menu-item-inner">درباره ما</div>
               </Link>
             </div>{" "}
-            <div className="slide-menu-item">
-              <Link to="/profile">
-                <div className="slide-menu-item-inner">پروفایل</div>
-              </Link>
-            </div>{" "}
+            {auth.accessToken && (
+              <div className="slide-menu-item">
+                <Link to="/profile">
+                  <div className="slide-menu-item-inner">پروفایل</div>
+                </Link>
+              </div>
+            )}
             {auth.accessToken && (
               <div
                 className="slide-menu-item"

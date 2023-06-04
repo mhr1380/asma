@@ -16,7 +16,9 @@ const WordItem = ({ title, icon, alphabet, url = "words" }) => {
       <div className="kalameh-alphabet-container">
         <div className="kalameh-alphabet-inner-container">
           {" "}
-          <p>{title}</p>
+          <p className="category" style={{ fontSize: handleFontSize(title) }}>
+            {title}
+          </p>
           <img alt={title} src={icon} className="kalameh-category-icon" />
         </div>
       </div>
@@ -25,3 +27,10 @@ const WordItem = ({ title, icon, alphabet, url = "words" }) => {
 };
 
 export default WordItem;
+
+const handleFontSize = (title) => {
+  if (title.length > 20) {
+    return "14px";
+  }
+  return "17px";
+};

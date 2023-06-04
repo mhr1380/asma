@@ -18,6 +18,7 @@ const WordDescription = () => {
   const navigate = useNavigate();
   const [word, setWord] = useState({
     farsi_name: "",
+    farsi_description: "",
     farsi_description2: "",
     image: "",
     video: "",
@@ -57,26 +58,30 @@ const WordDescription = () => {
     <Layout header="کلمه">
       <div className="description-body">
         <div className="description-media-container">
-          <ReactPlayer // Disable download button
-            config={{
-              file: {
-                attributes: {
-                  controlsList: "nodownload noplaybackrate nofullscreen",
+          {word.video_link?.video1 ? (
+            <ReactPlayer
+              config={{
+                file: {
+                  attributes: {
+                    controlsList: "nodownload noplaybackrate nofullscreen",
+                  },
                 },
-              },
-            }}
-            // Disable right click
-            onContextMenu={(e) => e.preventDefault()}
-            width={"100%"}
-            url={word.video_link?.video1}
-            controls={true}
-          />
+              }}
+              // Disable right click
+              onContextMenu={(e) => e.preventDefault()}
+              width={"100%"}
+              url={word.video_link?.video1}
+              controls={true}
+            />
+          ) : null}
           <img src={word.image} alt="image2" />
         </div>
         <div className="description-text-container">
-          <p>{word.farsi_name}</p>
-          <p>{word.farsi_description2}</p>
+          <p>{word?.farsi_name}</p>
+          <p>{word?.farsi_description}</p>
+          <p>{word?.farsi_description2}</p>
         </div>
+        {console.log(word)}
         {word.image2 && (
           <div className="description-media-container half">
             <img src={image1} alt="image1" />

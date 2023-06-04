@@ -17,18 +17,21 @@ const Alphabet = () => {
       const { data } = await http.get(
         `/word-api/word-categories/?parent__farsi_name=${category}`
       );
+      console.log(data);
       if (data.count === 0) {
         const { data: resp } = await http.get(
           `/word-api/words/?category__farsi_name=${category}`
         );
+        console.log(resp);
         setWords(resp.results);
-        setSubCategories(data.results);
       } else {
-        setSubCategories(data.results);
+        setWords([]);
       }
+      setSubCategories(data.results);
     };
     fetchSubCategories();
   }, [category]);
+  console.log(words);
 
   return (
     <React.Fragment>

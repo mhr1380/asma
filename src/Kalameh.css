@@ -42,11 +42,12 @@ body::-webkit-scrollbar {
   display: grid;
   place-items: center;
   /* min-height: 400px; */
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 .kalameh-body-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 96px;
   justify-content: center;
   align-items: center;
   row-gap: 20px;
@@ -115,6 +116,15 @@ body::-webkit-scrollbar {
 .kalameh-alphabet-inner-container p {
   font-size: 20px;
   color: #535353;
+
+  line-height: 18px;
+}
+.kalameh-alphabet-inner-container p.category {
+  width: 98px;
+  height: 48px;
+  line-height: 19px;
+  padding: 7px;
+  overflow: hidden;
 }
 .kalameh-body-grid.subword {
   grid-template-columns: 1fr 1fr 1fr;
@@ -139,7 +149,7 @@ body::-webkit-scrollbar {
 }
 
 .description-media-container {
-  height: 335px;
+  max-height: 335px;
   width: 276px;
   border-radius: 30px;
   background-color: #fae3d9;
@@ -195,6 +205,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   row-gap: 7px;
+  margin-bottom: 96px;
 }
 .deaf-list-item {
   display: flex;
@@ -226,7 +237,7 @@ body::-webkit-scrollbar {
 }
 .kalameh-alphabet-inner-container p {
   font-size: 17px;
-  padding: 7px;
+  /* padding: 7px; */
   text-align: center;
   color: #535353;
 }

@@ -13,6 +13,7 @@ import { editMe } from "../http/edit-me";
 import { toast } from "react-toastify";
 const Profile = () => {
   const { auth, setAuth } = useAuth();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     first_name: "",
     last_name: "",
@@ -24,7 +25,7 @@ const Profile = () => {
     if (auth.user) {
       setUser(auth.user);
     } else {
-      // navigate("/login");
+      navigate("/login");
     }
   }, [auth]);
 

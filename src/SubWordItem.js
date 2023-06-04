@@ -39,7 +39,7 @@ const SubWordItem = ({
               }
             }}
           >
-            <p>{title}</p>
+            <p style={{ fontSize: handleFontSize(title) }}>{title}</p>
           </div>
         </Link>
       </div>
@@ -49,7 +49,7 @@ const SubWordItem = ({
     <div className="kalameh-alphabet-container">
       <Link to={`${id}`}>
         <div className="kalameh-alphabet-inner-container">
-          <p>{title}</p>
+          <p style={{ fontSize: handleFontSize(title) }}>{title}</p>
         </div>
       </Link>
     </div>
@@ -57,3 +57,10 @@ const SubWordItem = ({
 };
 
 export default SubWordItem;
+
+const handleFontSize = (title) => {
+  if (title.length > 8) {
+    return "14px";
+  }
+  return "17px";
+};

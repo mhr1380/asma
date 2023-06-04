@@ -50,7 +50,7 @@ function App() {
           <Route path="/search" element={<Search />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/home" element={<Home />}></Route>
-          <Route path="/success" element={<Success />}></Route>
+          <Route path="/successful" element={<Success />}></Route>
           <Route path="/failed" element={<Failed />}></Route>
           <Route path="/about-us" element={<AboutUs />}></Route>
           <Route
