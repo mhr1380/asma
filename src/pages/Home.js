@@ -1,5 +1,9 @@
 import Layout from "../Layout/Layout";
 import music from "../assets/images/music.png";
+import capital from "../assets/images/capital-letter@2x.png";
+import ear from "../assets/images/ear@2x.png";
+import puzzle from "../assets/images/puzzle (1)@2x.png";
+import test from "../assets/images/test@2x.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
@@ -13,10 +17,10 @@ const Home = () => {
             <div className="deaf-list-item-container">
               <div
                 className="deaf-list-item"
-                style={{ backgroundColor: "#F672804a" }}
+                style={{ backgroundColor: "#aaceff" }}
               >
                 <h3>کلمه</h3>
-                <img src={music} alt="music-icon" />
+                <img src={capital} alt="music-icon" />
               </div>
             </div>
           </Link>
@@ -26,10 +30,10 @@ const Home = () => {
             <div className="deaf-list-item-container">
               <div
                 className="deaf-list-item"
-                style={{ backgroundColor: "#c06c844a" }}
+                style={{ backgroundColor: "#d4e6ff" }}
               >
                 <h3>امور ناشنوایان</h3>
-                <img src={music} alt="music-icon" />
+                <img src={ear} alt="music-icon" />
               </div>
             </div>
           </Link>
@@ -40,7 +44,7 @@ const Home = () => {
                 style={{ backgroundColor: "#6c5b7b4a" }}
               >
                 <h3>جمله سازی</h3>
-                <img src={music} alt="music-icon" />
+                <img src={puzzle} alt="music-icon" />
               </div>
             </div>
           </Link>
@@ -52,7 +56,7 @@ const Home = () => {
                 style={{ backgroundColor: "#355C7D4a" }}
               >
                 <h3>آزمون</h3>
-                <img src={music} alt="music-icon" />
+                <img src={test} alt="music-icon" />
               </div>
             </div>
           </Link>

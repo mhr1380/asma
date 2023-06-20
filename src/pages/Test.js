@@ -1,5 +1,6 @@
 import Layout from "../Layout/Layout";
-import music from "../assets/images/music.png";
+import imageGallery from "../assets/images/image-gallery.png";
+import multimedia from "../assets/images/multimedia.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
 import { useState } from "react";
@@ -23,7 +24,7 @@ const Test = () => {
             <Link to="/test/testbegin">
               <div className="deaf-list-item test grey">
                 <h3>آزمون تصویری</h3>
-                <img src={music} alt="music-icon" />
+                <img src={imageGallery} alt="music-icon" />
               </div>
             </Link>
           </div>{" "}
@@ -39,7 +40,7 @@ const Test = () => {
           >
             <div className="deaf-list-item test pink">
               <h3>آزمون ویدیویی</h3>
-              <img src={music} alt="music-icon" />
+              <img src={multimedia} alt="music-icon" />
             </div>
           </div>
         </div>

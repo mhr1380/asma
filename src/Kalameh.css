@@ -59,7 +59,7 @@ body::-webkit-scrollbar {
 .kalameh-alphabet-container {
   width: 121px;
   height: 121px;
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   border-radius: 30px;
   display: grid;
   place-items: center;
@@ -81,7 +81,7 @@ body::-webkit-scrollbar {
   place-items: center;
 }
 .active .nav-icon-container {
-  background-color: #ffb6b9;
+  background-color: #d4e6ff;
 }
 .nav-icon-container {
   display: grid;
@@ -152,7 +152,7 @@ body::-webkit-scrollbar {
   max-height: 335px;
   width: 276px;
   border-radius: 30px;
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,6 +162,7 @@ body::-webkit-scrollbar {
 }
 .description-media-container img {
   border-radius: 30px;
+  max-height: 280px;
 }
 .description-media-container.half {
   height: 163px;
@@ -187,7 +188,7 @@ body::-webkit-scrollbar {
   width: 104px;
   height: 37px;
   background-color: white;
-  border: 1px solid #fcd4d9;
+  border: 1px solid #d4e6ff;
   border-radius: 35px;
   display: grid;
   place-items: center;
@@ -209,7 +210,7 @@ body::-webkit-scrollbar {
 }
 .deaf-list-item {
   display: flex;
-  background-color: #d2cdd7;
+  background-color: #d4e6ff;
   padding: 13px 29px;
   border-radius: 0 30px;
   width: 261px;
@@ -260,7 +261,7 @@ body::-webkit-scrollbar {
   background: #c2ced8;
 }
 .deaf-list-item.test.pink {
-  background: #fcd4d9;
+  background: #d4e6ff;
 }
 .test-begin-body {
   display: flex;
@@ -273,7 +274,7 @@ body::-webkit-scrollbar {
   place-items: center;
   width: 228px;
   height: 228px;
-  background-color: #fdf0f6;
+  background-color: #d4e6ff;
   border-radius: 30px;
 }
 .test-begin-options-container {
@@ -286,7 +287,7 @@ body::-webkit-scrollbar {
 .test-begin-option {
   /* cursor: pointer; */
   height: 37px;
-  background-color: #fdf0f6;
+  background-color: #d4e6ff;
   display: grid;
   place-items: center;
   font-family: "iransans";
@@ -342,7 +343,7 @@ body::-webkit-scrollbar {
 }
 .test-begin-btn {
   /* cursor: pointer; */
-  background-color: #fcd4d9;
+  background-color: #d4e6ff;
   width: 100px;
   height: 31px;
   border-radius: 15px;
@@ -397,7 +398,7 @@ body::-webkit-scrollbar {
   width: 320px;
   height: 42px;
   /* UI Properties */
-  background: #fae3d9;
+  background: #d4e6ff;
   border-radius: 15px;
   border: 0;
   color: #535353;
@@ -482,7 +483,7 @@ body::-webkit-scrollbar {
   color: #535353;
 }
 .req-btn {
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   border-radius: 9px;
   width: 78px;
   height: 26px;
@@ -586,7 +587,7 @@ body::-webkit-scrollbar {
   height: 50px;
   color: white;
   font-size: 18px;
-  background: #fec094;
+  background: #3585cc;
   box-shadow: 0px 3px 6px #00000026;
   border-radius: 24px;
   border: 0;
@@ -643,7 +644,7 @@ body::-webkit-scrollbar {
   height: 541px; */
   width: 0;
   height: 0;
-  background: #fae3d9;
+  background: #d4e6ff;
   border-radius: 0px 0px 180px 0px;
   transition: all 600ms ease-in;
 }
@@ -670,7 +671,7 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
   transition: all 600ms ease-in;
-  background: #fcd4d9;
+  background: #d4e6ff;
   border-radius: 0px 0px 250px 0px;
   padding-bottom: 50px;
 }
@@ -689,7 +690,7 @@ body::-webkit-scrollbar {
   align-items: center;
   width: 237px;
   height: 37px;
-  border: 2px solid #f8e8e2;
+  /* border: 2px solid #f8e8e2; */
   border-radius: 18px;
   font-size: 20px;
   color: #535353;
@@ -715,7 +716,7 @@ body::-webkit-scrollbar {
   width: 107px;
   height: 107px;
   border-radius: 30px;
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -746,7 +747,7 @@ body::-webkit-scrollbar {
   width: 127px;
   height: 127px;
   border-radius: 30px;
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   position: relative;
 }
 .profile-image-container img.image {
@@ -766,7 +767,7 @@ body::-webkit-scrollbar {
 .profile-image-layer {
   width: 100%;
   height: 100%;
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   opacity: 0.5;
   position: absolute;
   border-radius: 30px;
@@ -776,7 +777,7 @@ body::-webkit-scrollbar {
 .profile-image-edit-container {
   width: 38px;
   height: 38px;
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -803,7 +804,7 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 .profile-details-items {
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   width: 182px;
   display: flex;
   justify-content: center;
@@ -812,11 +813,11 @@ body::-webkit-scrollbar {
   border-radius: 15px;
 }
 .profile-details-items.disabled {
-  background-color: #ffeee7;
+  background-color: #d4e6ff;
 }
 .profile-details-items-inner {
   width: 174px;
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   outline: 0;
   height: 38px;
   border: 2px solid white;
@@ -829,14 +830,14 @@ body::-webkit-scrollbar {
   padding-right: 8px;
 }
 .profile-details-items-inner.disabled {
-  background-color: #ffeee7;
+  background-color: #d4e6ff;
 }
 .profile-details-title {
   min-width: 100px;
   text-align: left;
 }
 .profile-details-container-save-btn {
-  border: 3px solid #fae3d9;
+  border: 3px solid #d4e6ff;
   color: #535353;
   border-radius: 15px;
   height: 38px;
@@ -864,7 +865,7 @@ body::-webkit-scrollbar {
   place-items: center;
 }
 .popup-body {
-  background-color: #fae3d9;
+  background-color: #d4e6ff;
   display: flex;
   flex-direction: column;
   border-radius: 30px;
@@ -900,7 +901,7 @@ body::-webkit-scrollbar {
   height: 40px;
   background-color: white;
   border-radius: 15px;
-  border: 1px solid #fae3d9;
+  border: 1px solid #d4e6ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1066,6 +1067,7 @@ body::-webkit-scrollbar {
   .description-media-container {
     height: 100%;
     width: 502px;
+    max-height: none;
   }
   .description-media-container.half {
     width: 502px;

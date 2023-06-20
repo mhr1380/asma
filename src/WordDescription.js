@@ -63,13 +63,14 @@ const WordDescription = () => {
               config={{
                 file: {
                   attributes: {
-                    controlsList: "nodownload noplaybackrate nofullscreen",
+                    controlsList: "nodownload noplaybackrate",
                   },
                 },
               }}
               // Disable right click
               onContextMenu={(e) => e.preventDefault()}
               width={"100%"}
+              height={"auto"}
               url={word.video_link?.video1}
               controls={true}
             />

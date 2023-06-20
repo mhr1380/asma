@@ -1,70 +1,73 @@
 import Layout from "../Layout/Layout";
-import music from "../assets/images/music.png";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
-
+import music from "../assets/images/music.png";
 import Popup from "../components/popup";
-import { useState } from "react";
-const affairs = [
-  {
-    id: 1,
-    icon: "https://api.eshareh-app.ir/media/icons00000014",
-    sort_id: 1,
-    farsi_name: "سرود ناشنوایان",
-    english_name: null,
-    arabic_name: null,
-    parent: null,
-  },
-  {
-    id: 2,
-    icon: "https://api.eshareh-app.ir/media/icons0000002",
-    sort_id: 2,
-    farsi_name: "مکالمه",
-    english_name: null,
-    arabic_name: null,
-    parent: null,
-  },
-  {
-    id: 260,
-    icon: "https://api.eshareh-app.ir/media/icons0001",
-    sort_id: 3,
-    farsi_name: "زبان اشاره ایرانی",
-    english_name: null,
-    arabic_name: null,
-    parent: null,
-  },
-  {
-    id: 265,
-    icon: "https://api.eshareh-app.ir/media/icons00000010",
-    sort_id: 7,
-    farsi_name: "تشکل ها",
-    english_name: null,
-    arabic_name: null,
-    parent: null,
-  },
-  {
-    id: 269,
-    icon: "https://api.eshareh-app.ir/media/icons00000016",
-    sort_id: 14,
-    farsi_name: "نماز",
-    english_name: null,
-    arabic_name: null,
-    parent: null,
-  },
-  {
-    id: 6,
-    icon: "https://api.eshareh-app.ir/media/icons0011",
-    sort_id: 17,
-    farsi_name: "شخصیت ها",
-    english_name: null,
-    arabic_name: null,
-    parent: null,
-  },
-];
+import { useEffect, useState } from "react";
+import { http } from "../http";
+
 const Affair = () => {
   const { auth } = useAuth();
   const navigator = useNavigate();
   const [showPremiumPopup, setShowPremiumPopup] = useState(false);
+  const [affairs, setAffairs] = useState([
+    {
+      id: 1,
+      icon: "https://api.eshareh-app.ir/media/media/icon/icons00000014.png",
+      sort_id: 1,
+      farsi_name: "سرود ناشنوایان",
+      english_name: null,
+      arabic_name: null,
+      parent: null,
+    },
+    {
+      id: 2,
+      icon: "https://api.eshareh-app.ir/media/media/icon/icons0000002.png",
+      sort_id: 2,
+      farsi_name: "مکالمه",
+      english_name: null,
+      arabic_name: null,
+      parent: null,
+    },
+    {
+      id: 260,
+      icon: "https://api.eshareh-app.ir/media/media/icon/icons0001.png",
+      sort_id: 3,
+      farsi_name: "زبان اشاره ایرانی",
+      english_name: null,
+      arabic_name: null,
+      parent: null,
+    },
+    {
+      id: 265,
+      icon: "https://api.eshareh-app.ir/media/media/icon/icons00000010.png",
+      sort_id: 7,
+      farsi_name: "تشکل ها",
+      english_name: null,
+      arabic_name: null,
+      parent: null,
+    },
+    {
+      id: 6,
+      icon: "https://api.eshareh-app.ir/media/media/icon/icons0011.png",
+      sort_id: 17,
+      farsi_name: "شخصیت ها",
+      english_name: null,
+      arabic_name: null,
+      parent: null,
+    },
+  ]);
+  useEffect(() => {
+    (async () => {
+      const fetchCategories = async () => {
+        const { data } = await http.get("/affair-api/affair-categories/", {
+          headers: { Authorization: `Bearer ${auth?.accessToken}` },
+        });
+        if (data.results.length > 0) setAffairs(data.results);
+      };
+      fetchCategories();
+    })();
+  }, []);
   return (
     <Layout header="امور ناشنوایان">
       <Popup
@@ -88,7 +91,7 @@ const Affair = () => {
               >
                 <div className="deaf-list-item">
                   <h3>{affair.farsi_name}</h3>
-                  <img src={music} alt="music-icon" />
+                  <img src={affair.icon} alt="music-icon" />
                 </div>
               </div>
             );

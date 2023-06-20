@@ -26,21 +26,24 @@ const TestBegin = () => {
   const [showPopup, setShowPopup] = useState(false);
   const navigator = useNavigate();
   const { auth, setAuth } = useAuth();
-  console.log(auth);
+
   useEffect(() => {
+    const handleOptions = (data, setOptions, setCorrectAnswer) => {
+      const options = data.results;
+      setOptions(options);
+      let x = Math.floor(Math.random() * 4);
+      const correct = options[x];
+      setCorrectAnswer(correct);
+    };
     const fetchTest = async () => {
       if (auth.accessToken) {
         let { data } = await http.get("/word-api/exams/", {
           headers: { Authorization: `Bearer ${auth.accessToken}` },
         });
-        console.log(data);
-        const options = data.results;
-        setOptions(options);
-        let x = Math.floor(Math.random() * 4);
-        const correct = options[x];
-        setCorrectAnswer(correct);
+        handleOptions(data, setOptions, setCorrectAnswer);
       } else {
-        navigator("/login");
+        let { data } = await http.get("/word-api/exams/");
+        handleOptions(data, setOptions, setCorrectAnswer);
       }
     };
     fetchTest();
